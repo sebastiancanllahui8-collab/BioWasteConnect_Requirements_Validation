@@ -1,0 +1,12 @@
+US09.feature - Carga de Recomendaciones en menos de 3 segundos (Rendimiento) 
+Optimización del tiempo de respuesta del algoritmo 
+    As a emprendedor Sostenible 
+    I want to que el listado de recomendaciones por algoritmo cargue en menos de 3 segundos 
+    So that no retraso mi proceso de búsqueda y adquisición de insumos. 
+
+Scenario:Consulta masiva al motor de recomendaciones bajo carga normal 
+    Given que el receptor se encuentra en el feed principal con su geolocalización activa 
+    When solicita la carga de oportunidades recomendadas basadas en su rubro 
+    Then la capa de caché debe procesar las consultas repetitivas de proximidad  
+    And el listado   completo de tarjetas de residuos debe mostrarse en la pantalla en un tiempo de
+    respuesta < 3.0 segundos
